@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.*;
 
 public class SafeInput {
 
