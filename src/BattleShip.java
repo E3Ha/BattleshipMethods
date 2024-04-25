@@ -7,13 +7,12 @@ public class BattleShip {
     private static Scanner scan = new Scanner(System.in);
     private static Random rand = new Random();
 
-
     public static void main(String[] args) {
 
         BattleshipInput.clearBoard();
         BattleshipInput.placeBoats();
         BattleshipInput.display();
+
+
     }
-
-
 }

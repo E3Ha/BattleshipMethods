@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class BattleshipInput {
     //Global Board setup
     private static final int ROW = 10;
-    private static int COL = 10;
+    private static final int COL = 10;
     private static String board [][] = new String[ROW][COL];
 
     //Global ShipLengths
@@ -15,7 +15,6 @@ public class BattleshipInput {
 
     //Method for Displaying Board
     public static void display(){
-        //Need to simplify
         System.out.print("   ");
         System.out.print("\uFF21"+" "); //A
         System.out.print("\uFF22"+" "); //B
@@ -59,98 +58,9 @@ public class BattleshipInput {
         placeShip(SUB);
         placeShip(GUNNER);
         placeShip(CARRIER);
-        //patrolBoat() - 2
-        //submarine() - 3
-        //destroyer() - 3
-        //battleShip() - 4
-        //carrier() - 5
     }
-/*
-    //Method for creating patrol boats
-    public static void patrolBoat(Random rand) {
-        int direction = rand.nextInt(2);
-        int randRow = 0;
-        int randCol = 0;
-        boolean validPlacement = false;
 
-
-        //Determine valid location
-        while (!validPlacement){
-            randRow = rand.nextInt(8);
-            randCol = rand.nextInt(8);
-            validPlacement = isValidMove(randRow, randCol, 2, direction);
-        }
-
-        //Place ship if Valid
-        if (validPlacement){
-            //Place ship along row
-            if (direction == 0) {
-                for(int i = 0; i<= 2; i++){
-                    board[randRow+i][randCol] = "ship";
-                }
-            }
-
-            //Place ship along column
-            else if (direction == 1) {
-                for (int i = 0; i < 2; i++) {
-                    board[randRow][randCol + i] = "ship";
-                }
-            }
-        }
-
-
-    }
-*/
-/*
-    //Method for Valid Move
-    private static boolean isValidMove(int row, int col, int shipLength, int direction){
-        //0 = rows, 1 = cols
-        int count = 0;
-
-
-        //if the first spot is valid
-        if (board[row][col] == "\uD83C\uDF0A"){
-            count += 1;
-            //if we're placing along the row...
-            if (direction == 0) {
-                //Check for amount of available space
-                for (int i = 0; i < (shipLength -= 1); i++) {
-                    if (board[row + i][col] == "\uD83C\uDF0A") {
-                        //add to count of available space
-                        count++;
-                    }
-                }
-            }
-            //if we're placing along the column...
-            if (direction == 1) {
-                //Check for amount of available space
-                for (int i = 0; i < (shipLength -= 1); i++) {
-                    if (board[row][col + i] == "\uD83C\uDF0A") {
-                        //add to count of available space
-                        count++;
-                    }
-                }
-            }
-        }
-        //determine based on shipLength && amount of available space if valid
-        if (shipLength == 2 && count == 2){
-            return true;
-        }
-        else if (shipLength == 3 && count == 3){
-            return true;
-        }
-        else if (shipLength == 4 && count == 4){
-            return true;
-        }
-        else if (shipLength == 5 && count == 5){
-            return true;
-        }
-        //...Otherwise, return false
-        return false;
-    }
-*/
-
-    //Method that places all boats - shown in class
+    //Method that places all boats
     public static void placeShip(int shipLength) {
         Random rand = new Random();
         //Vert or Hora needs to be bound to 2 (0,1)
