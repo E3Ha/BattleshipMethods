@@ -15,6 +15,7 @@ public class BattleshipInput {
 
     //Method for Displaying Board
     public static void display(){
+        //Print top Letters
         System.out.print("   ");
         System.out.print("\uFF21"+" "); //A
         System.out.print("\uFF22"+" "); //B
@@ -28,16 +29,17 @@ public class BattleshipInput {
         System.out.print("\uFF2A"); //J
         System.out.print("    ");
         System.out.println();
-
+        //Print top border
         for (int c = 0; c < 30; c++){
             System.out.print("-");
         }
         System.out.println();
         for (int row = 0; row < ROW; row++){
+            //Print side Numbers && Border
             System.out.print(row + 1);
             System.out.print("| ");
+            //Print Board
             for (int col = 0; col < COL; col++){
-                //System.out.print(board[row][col] + " | ");
                 System.out.print(board[row][col] + " ");
             }
             System.out.println();
