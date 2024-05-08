@@ -119,4 +119,102 @@ public class BattleshipInput {
         }
     }
 
+    //Method for determining hit or miss when playerMove
+    public static boolean playerMove() {
+        Scanner scan = new Scanner(System.in);
+        int userRow;
+        String tempCol = "";
+        int userCol = -1;
+        //Collect player's move (row && column)
+        userRow = (SafeInput.getRangedInt(scan, "Row (1-10): ", 1, ROW)) - 1;
+        do {
+            tempCol = SafeInput.getNonZeroLenString(scan, "Col (A-J): ");
+            tempCol = tempCol.toLowerCase();
+            switch (tempCol) {
+                case "a":
+                    userCol = 0;
+                    break;
+                case "b":
+                    userCol = 1;
+                    break;
+                case "c":
+                    userCol = 2;
+                    break;
+                case "d":
+                    userCol = 3;
+                    break;
+                case "e":
+                    userCol = 4;
+                    break;
+                case "f":
+                    userCol = 5;
+                    break;
+                case "g":
+                    userCol = 6;
+                    break;
+                case "h":
+                    userCol = 7;
+                    break;
+                case "i":
+                    userCol = 8;
+                    break;
+                case "j":
+                    userCol = 9;
+                    break;
+            }
+        }
+        while (userCol == -1);
+
+        return true;
+        //Have they moved to that location already? - if they have, loop until they give us a valid location
+
+        //If they haven't moved to that location already...
+
+        //If there's a ship in that location, it's a hit - return true
+
+        //Else if a wave is in that location (not a ship) - it's a miss - return false
+
+    }
+
+
+
+/*
+//Method for making a move on the board - TicTacToe
+    private static void makeMove(String player){
+        int userRow;
+        int userCol;
+        //Get Row and Column (subtract 1 for the array)
+        userRow = (SafeInput.getRangedInt(scan, "Row " + "[" + player + "]: ", 1, ROW)) - 1;
+        userCol = (SafeInput.getRangedInt(scan, "Column " + "[" + player + "]: ", 1, COL)) - 1;
+        System.out.println();
+        //if spot is taken (validMove is false)...
+        if (!isValidMove(userRow,userCol)){
+            //loop until user gives a valid location
+            do {
+                System.out.println();
+                System.out.println("Invalid Move. Try Again.");
+                userRow = (SafeInput.getRangedInt(scan, "Row: ", 1, ROW)) - 1;
+                userCol = (SafeInput.getRangedInt(scan, "Column: ", 1, COL)) - 1;
+            }
+            while (!isValidMove(userRow,userCol));
+        }
+        //Make move if valid
+        board[userRow][userCol] = player;
+    }
+ */
+/*
+//TicTacToe - Valid move method
+private static boolean isValidMove(int row, int col){
+        //If space is not filled, return true
+        if (board[row][col] == "-"){
+            return true;
+        }
+        return false;
+    }
+ */
+
+
+
+
+
 }

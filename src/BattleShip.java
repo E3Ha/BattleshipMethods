@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,7 +13,6 @@ public class BattleShip {
         BattleshipInput.clearBoard();
         BattleshipInput.placeBoats();
         BattleshipInput.display();
-
 
     }
 }
