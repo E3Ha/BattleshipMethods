@@ -10,9 +10,27 @@ public class BattleShip {
 
     public static void main(String[] args) {
 
+        int hitCount = 0;
+        int missCount = 0;
+
         BattleshipInput.clearBoard();
         BattleshipInput.placeBoats();
         BattleshipInput.display();
+
+        do {
+            if (BattleshipInput.playerMove()){
+                hitCount++;
+                missCount = 0;
+            }
+            else{
+                missCount++;
+            }
+            BattleshipInput.display();
+        }
+        while(hitCount != 5);
+
+        System.out.println("You have hit 5 times!");
+
 
     }
 }
